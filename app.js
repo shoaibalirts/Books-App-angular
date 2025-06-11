@@ -1,12 +1,20 @@
-var person = "Ahmed";
-// to log person
- 
-shoaibApp.logPerson(); // Shoaib Ali (avoided to log person Ahmed). this concept is a globalnamespace
+// shoaibApp is an angular module
+var shoaibApp = angular.module('myApp',[]);
+shoaibApp.person = "Shoaib Ali";
+shoaibApp.logPerson = function(){
+    console.log(shoaibApp.person);
+    
+}
+shoaibApp.logPerson();
 
-shoaibApp.person = person;
-shoaibApp.logPerson(); // Ahmed
+console.log("-----------Angular Module Object-------");
+console.log(shoaibApp);
 
-
-
-
-
+shoaibApp.controller('mainController', function($scope){
+    // model or data
+    $scope.greeting = "hej verden";
+    
+});
+shoaibApp.controller('secondaryController', function($scope){
+    $scope.greeting = 'hejsa';
+});

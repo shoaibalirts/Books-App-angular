@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angular for learning purposes</title>
     <script src="https://code.angularjs.org/snapshot-stable/angular.min.js" defer></script>
-    <script src="utility.js" defer></script>
     <script src="app.js" defer></script>
 </head>
 <body>
-    
+    <section class="container">
+        <div ng-controller="mainController">
+            <h1>mainController</h1>
+            <p>{{greeting}} from mainController</p>
+        </div>
+    </section>
+    <section class="container">
+        <div ng-controller="secondaryController">
+            <h1>secondaryController</h1>
+            <p>{{greeting}} from secondayController</p>
+        </div>
+    </section>
 </body>
 </html>
