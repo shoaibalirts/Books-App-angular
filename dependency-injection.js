@@ -10,10 +10,13 @@ var Person = function(firstname, lastname){
     this.lastname = lastname;
 };
 */
-// logPerson function is dependent on shoaibali object because object is created inside the function
-function logPerson() {
-  var shoaibali = new Person("Shoaib", "Ali"); // 
-  console.log(shoaibali);
+// logPerson function 
+function logPerson(p) {
+  console.log(p);
 }
 
-logPerson();
+var shoaibali = new Person("Shoaib", "Ali"); 
+
+
+// sending object into a function is a Dependency Injection
+logPerson(shoaibali);
