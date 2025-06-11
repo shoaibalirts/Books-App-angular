@@ -12,8 +12,15 @@
   </head>
   <body>
     <div ng-controller="mainController">
-      <h1>mainController</h1>
-      <p>Hello {{name + '. How are you!'}}</p>
+      <!-- <h1>mainController</h1>
+      <p>Hello {{name + '. How are you!'}}</p> -->
+      <div>
+        <label>What is your twitter handler?</label>
+        <input ng-model="twitterRoute" type="text">
+      </div>
+      <hr />
+      <h1>twitter.com/{{lowercaseHandle()}}</h1>
     </div>
+    
   </body>
 </html>

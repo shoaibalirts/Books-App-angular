@@ -1,4 +1,5 @@
 var shoaibApp = angular.module("myApp", []);
+/*
 shoaibApp.controller('mainController',['$scope','$timeout', function($scope, $timeout){
   $scope.name="Shoaib";
   $timeout(function(){
@@ -7,4 +8,12 @@ shoaibApp.controller('mainController',['$scope','$timeout', function($scope, $ti
       
   }, 3000);
 }]);
+*/
+shoaibApp.controller('mainController',['$scope','$filter', function($scope,$filter){
+  $scope.twitterRoute='';
+  $scope.lowercaseHandle = function(){
+    return $filter("lowercase")($scope.twitterRoute);
+  }
 
+  
+}]);
