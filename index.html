@@ -4,23 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Angular for learning purposes</title>
-    <script
-      src="https://code.angularjs.org/snapshot-stable/angular.min.js"
-      defer
-    ></script>
-    <script src="app.js" defer></script>
   </head>
   <body>
     <div ng-controller="mainController">
-      <!-- <h1>mainController</h1>
-      <p>Hello {{name + '. How are you!'}}</p> -->
+      <p>Hello {{name + '. How are you!'}}</p>
       <div>
         <label>What is your twitter handler?</label>
-        <input ng-model="twitterRoute" type="text">
+        <input ng-model="twitterRoute" type="text" />
       </div>
       <hr />
-      <h1>twitter.com/{{lowercaseHandle()}}</h1>
+      <p>twitter.com/{{lowercaseHandle()}}</p>
+      <section>
+        <h1>Increment</h1>
+        <div ng-if="data.count<5">
+          <label>Less than 5</label>
+          <button ng-click="data.count=data.count+1">
+            Increment
+          </button>
+        </div>
+        <div ng-if="data.count===5">
+          <label>Equal to 5</label>
+          <button ng-click="data.count=data.count+1" >
+            Increment
+          </button>
+        </div>
+        <div ng-if="data.count>5">
+          <label>Greater than 5</label>
+          <button ng-click="data.count=data.count+1">
+            Increment
+          </button>
+        </div>
+        <p>Count: {{data.count}}</p>
+      </section>
     </div>
-    
+    <script src="https://code.angularjs.org/snapshot-stable/angular.min.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

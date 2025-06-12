@@ -10,6 +10,7 @@ shoaibApp.controller('mainController',['$scope','$timeout', function($scope, $ti
 }]);
 */
 shoaibApp.controller('mainController',['$scope','$filter', '$timeout', function($scope,$filter,$timeout){
+  
   $scope.twitterRoute='';
   $scope.lowercaseHandle = function(){
     return $filter("lowercase")($scope.twitterRoute);
@@ -24,5 +25,15 @@ shoaibApp.controller('mainController',['$scope','$filter', '$timeout', function(
     console.log("Scope Changed!");
     
   },3000);
+
+$scope.data = { count: 0 };
+  // $scope.count=0;
+  $scope.$watch('data.count', function(newValue, oldValue){
+    console.log("Count OldValue: "+oldValue);
+    console.log("count NewValue: "+newValue);
+  });
+  console.log($scope.count);
   
+  
+
 }]);
