@@ -8,23 +8,20 @@
   <body>
     <nav>
       <ul>
-        <li><a href="#/">Book</a></li>
+        <li><a href="#/book">Book</a></li>
         <li><a href="#/chapter">Chapter</a></li>
       </ul>
     </nav>
-    <div ng-view>
-      <h1>{{name}}</h1>
-    </div>
-    <div ng-controller="bookController">
-      {{name}}
-    </div>
-    <div ng-controller="chapterController">
-      {{name}}
-    </div>
+    <div ng-view></div>
+    
+    
     <hr />
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular-route.min.js"></script>
+
+    <!-- <script src="https://code.angularjs.org/snapshot-stable/angular.min.js"></script>
+    <script src="https://code.angularjs.org/snapshot-stable/angular-route.min.js"></script> -->
 
     <script src="app.js"></script>
   </body>
