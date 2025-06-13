@@ -1,20 +1,23 @@
-var spaApp = angular.module("myApp", ["ngRoute"]);
+var spaApp = angular.module("myApp", ['ngRoute']);
 spaApp.config(function ($routeProvider) {
+  
   $routeProvider
     .when("/", {
       templateUrl: "pages/book.html",
-      controller: bookController,
+      // controller: bookController,
     })
     .when("/chapter", {
       templateUrl: "pages/chapter.html",
-      controller: chapterController,
+      // controller: chapterController,
     })
     .when("/book", {
       templateUrl: "pages/book.html",
-      controller: bookController,
+      // controller: bookController,
     });
-  console.log($routeProvider);
+  // console.log($routeProvider);
+
 });
+
 spaApp.controller("bookController", [
   "$scope",
   function ($scope) {
