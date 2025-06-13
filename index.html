@@ -3,41 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Angular for learning purposes</title>
+    <title>Single Page Application in Angular</title>
   </head>
   <body>
-    <div ng-controller="mainController">
-      <p>Hello {{name + '. How are you!'}}</p>
-      <div>
-        <label>What is your twitter handler?</label>
-        <input ng-model="twitterRoute" type="text" />
-      </div>
-      <hr />
-      <p>twitter.com/{{lowercaseHandle()}}</p>
-      <section>
-        <h1>Increment</h1>
-        <div ng-if="data.count<5">
-          <label>Less than 5</label>
-          <button ng-click="data.count=data.count+1">
-            Increment
-          </button>
-        </div>
-        <div ng-if="data.count===5">
-          <label>Equal to 5</label>
-          <button ng-click="data.count=data.count+1" >
-            Increment
-          </button>
-        </div>
-        <div ng-if="data.count>5">
-          <label>Greater than 5</label>
-          <button ng-click="data.count=data.count+1">
-            Increment
-          </button>
-        </div>
-        <p>Count: {{data.count}}</p>
-      </section>
+    <nav>
+      <ul>
+        <li><a href="#">Book</a></li>
+        <li><a href="#/chapter">Chapter</a></li>
+      </ul>
+    </nav>
+    <div ng-view>
+      <h1>{{name}}</h1>
     </div>
+    <hr />
+    
+
     <script src="https://code.angularjs.org/snapshot-stable/angular.min.js"></script>
+    <script src="https://code.angularjs.org/snapshot-stable/angular-route.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
