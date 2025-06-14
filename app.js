@@ -27,17 +27,31 @@ spaApp.config(function ($routeProvider) {
 
 });
 
+// creating a service
+spaApp.service('bookNameService', function(){
+  var self = this;
+  this.bookName = "Learn Angular under the hood";
+  this.bookNameLength = function(){
+    return self.bookName.length;
+  }
+});
 
 spaApp.controller("bookController", [
-  "$scope",
-  function ($scope) {
-    $scope.bookName = "Learn Angular under the hood";
+  "$scope","bookNameService",
+  function ($scope, bookNameService) {
+    $scope.bookName = bookNameService.bookName;
+    $scope.$watch('bookName', function(){
+      bookNameService.bookName = $scope.bookName;
+    });
   },
 ]);
 spaApp.controller("chapterController", [
-  "$scope",
-  function ($scope) {
-    $scope.name = "Chapter";
+  "$scope","bookNameService",
+  function ($scope, bookNameService) {
+    $scope.bookName = bookNameService.bookName;
+    $scope.$watch('bookName', function(){
+      bookNameService.bookName = $scope.bookName;
+    });
   },
 ]);
 
